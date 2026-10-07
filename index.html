@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Boipoka-আপনার প্রিয় বইয়ের ঠিকানা</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon"type="image/png" href="assets/img/logo.png">
+
+    <!-- Google Fonts (Hind Siliguri for Bengali & Poppins for modern UI) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts & FontAwesome Header-এ না থাকলে যুক্ত করে নিন -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+
+   <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  
+
+    <!-- ================= MODERN BOIPOKA WELCOME POPUP ================= -->
+    <div id="welcome-modal" class="fixed inset-0 z-[100] flex items-center justify-center bg-gray-900/60 backdrop-blur-md p-4 transition-opacity duratio ">
+        <!-- Modal Box -->
+        <div class="bg-white/95 backdrop-blur-xl border border-emerald-100 rounded-[28px] shadow-2xl p-8 max-w-[440px] w-full text-center relative transform transition-all scale-100 overflow-hidden">
+            
+            <!-- Close (X) Button -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 text-gray-400 hover:text-gray-700 hover:bg-gray-200 flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <!-- Top Icon with Glow -->
+            <div class="relative w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5 p-3 shadow-inner">
+                    <img src="assets/img/logo.png" alt="Boipoka Logo" class="w-full h-full object-contain">
+                        <span class="absolute -top-1 -right-1 flex h-4 w-4">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500"></span>
+                    </span>
+                    </div>
+
+            <!-- Heading -->
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-2 tracking-wide" style="font-family: 'Playfair Display', serif;">
+                Welcome to <span class="animated-green-text">Boipoka!</span>
+            </h2>
+
+            <!-- Subheading Badge -->
+            <span class="inline-block bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1 rounded-full mb-4 border border-emerald-200/60">
+                📚 আপনার পছন্দের বইয়ের রাজ্য
+            </span>
+
+            <!-- Description -->
+            <p class="text-gray-600 text-[15px] leading-relaxed mb-7 font-sans" style="font-family: 'Hind Siliguri', sans-serif;">
+                বইয়ের জগতে আপনাকে স্বাগতম! অসাধারণ সব বইয়ের কালেকশন, স্পেশাল ডিসকাউন্ট ও ফ্রি রিভিউ দেখতে নিচে ক্লিক করুন।
+            </p>
+
+            <!-- Primary Button -->
+            <button onclick="closeModal()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3.5 px-6 rounded-xl transition duration-200 shadow-lg shadow-emerald-200 flex items-center justify-center space-x-2 text-base">
+                <span>বইয়ের কালেকশন দেখুন</span>
+                <i class="fa-solid fa-arrow-right text-sm ml-1"></i>
+            </button>
+
+            <!-- Footer Contact Info -->
+            <div class="mt-5 pt-4 border-t border-gray-100 flex items-center justify-between text-[12px] text-gray-400">
+                <span class="flex items-center gap-1">
+                    <i class="fa-solid fa-phone text-emerald-600"></i> 01843589154
+                </span>
+                <span class="flex items-center gap-1">
+                    <i class="fa-solid fa-star text-amber-400"></i> 4.9 (৫,০০০+ পাঠক)
+                </span>
+            </div>
+
+        </div>
+    </div>
+    <!-- ================= END WELCOME POPUP ================= -->
+
+    <!-- ================= 2. SLIM MAIN NAVBAR ================= -->
+   <header class="sticky top-0 bg-white shadow-sm border-b border-gray-100">
+    <div class="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20 gap-3">
+
+            <!-- Bame Logo Ebong Mobile Hambarger Button -->
+            <div class="flex items-center gap-3">
+                <!-- Mobile Menu Toggle Button (Bame Niye Asha Hoese) -->
+                <button id="menu-btn" class="xl:hidden text-xl text-gray-700 focus:outline-none">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <!-- Logo -->
+                <a href="#" class="flex gap-1.5 shrink-0 items-center">
+                    <img src="assets/img/logo.png" alt="Boipoka Logo" class="h-10 w-auto object-contain">
+                    <span class="text-[15px] font-black tracking-widest text-gray-900 uppercase leading-none">BOIPOKA</span>
+                </a>
+            </div>
+
+            <!-- Middle Navigation Menu (Desktop) -->
+            <nav class="hidden xl:flex items-center space-x-4 text-[15px] font-bold uppercase tracking-wider text-gray-700" id="mobileMenu">
+                <a href="#home" class="hover:text-emerald-600 transition">Home</a>
+                <a href="about-book.html" class="hover:text-emerald-600 transition">About Book</a>
+                <a href="author.html" class="hover:text-emerald-600 transition">Author</a>
+                <a href="sneak-peek.html" class="hover:text-emerald-600 transition">Sneak Peek</a>
+                <a href="reviews.html" class="hover:text-emerald-600 transition">Review</a>
+                <a href="contact.html" class="hover:text-red-600 transition">Contact</a>
+            </nav>
+
+            <!-- Right Search & Action Icons -->
+            <div class="flex items-center space-x-2.5 text-gray-700 text-base">
+                
+                <!-- Search Toggle Button & Dropdown Container -->
+                <div class="relative" id="search-container">
+                    <button id="search-toggle-btn" class="hover:text-emerald-600 transition p-1 flex items-center justify-center focus:outline-none" title="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+
+                    <!-- Dropdown Search Bar -->
+                    <div id="search-dropdown" class="hidden absolute right-0 mt-2 w-80 sm:w-80 bg-white p-2.5 rounded-lg shadow-xl border border-gray-100 transition-all duration-200 z-50">
+                        <div class="relative flex items-center">
+                            <input 
+                                id="search-input"
+                                type="text" 
+                                placeholder="What are you looking for?" 
+                                class="w-full bg-gray-100 text-gray-800 placeholder-gray-400 text-xs py-2 pl-3 pr-8 rounded-md focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                            >
+                            <button class="absolute right-2.5 text-gray-500 hover:text-emerald-600">
+                                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Icon -->
+                <a href="#" class="hover:text-emerald-600 transition relative p-1" title="Wishlist">
+                    <i class="fa-regular fa-heart"></i>
+                </a>
+
+                <!-- User Account Icon -->
+                <a href="#" class="hover:text-emerald-600 transition relative p-1" title="Account">
+                    <i class="fa-regular fa-user"></i>
+                </a>
+
+                <!-- Cart Icon with Badge -->
+                <a href="#order" class="hover:text-emerald-600 transition relative p-1" title="Cart">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="absolute -top-1 -right-1 bg-red-500 text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
+                        0
+                    </span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-gray-100 px-5 py-3 space-y-2 shadow-lg">
+        <a href="#home" class="block text-xs font-bold uppercase text-gray-700 hover:text-emerald-600">Home</a>
+        <a href="about-book.html" class="block text-xs font-bold uppercase text-gray-700 hover:text-emerald-600">About-Book</a>
+        <a href="author.html" class="block text-xs font-bold uppercase text-gray-700 hover:text-emerald-600">Author</a>
+        <a href="sneak-peek.html" class="block text-xs font-bold uppercase text-gray-700 hover:text-emerald-600">Sneak-peek</a>
+        <a href="reviews.html" class="block text-xs font-bold uppercase text-gray-700 hover:text-emerald-600">Reviews</a>
+        <a href="contact.html" class="block text-xs font-bold uppercase text-red-500">Contact</a>
+    </div>
+    </header>
+
+
+    <!-- ================= 2. ANIMATED HERO SECTION ================= -->
+    <section id="home" class="pt-8 pb-20 lg:pt-12 lg:pb-28 bg-gradient-to-br from-emerald-50/60 via-white to-green-50/50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Left Text Content -->
+            <div class="space-y-6 text-center md:text-left">
+                <span class="inline-block bg-emerald-100 text-emerald-800 font-semibold px-4 py-1.5 rounded-full text-sm">
+                    ✨ নতুন বেস্টসেলার বই ২০২৬
+                </span>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
+                    জীবনের মোড় ঘুরিয়ে দেওয়ার সেরা বই 
+                    <span class="block mt-2 animated-color-text font-extrabold">
+                        "Boipoka" স্পেশাল এডিশন
+                    </span>
+                </h1>
+
+                <p class="text-gray-600 text-lg leading-relaxed max-w-xl mx-auto md:mx-0">
+                    স্বপ্ন এবং সফলতার মধ্যবর্তী দূরত্ব দূর করার প্র্যাক্টিক্যাল গাইডলাইন। আপনার ব্যক্তিগত ও পেশাদার জীবনকে সমৃদ্ধ করতে আজই সংগ্রহ করুন।
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4 pt-2">
+                    <a href="#order" class="bg-emerald-600 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:bg-emerald-700 transition transform hover:-translate-y-1 text-center">
+                        Order Now <i class="fa-solid fa-cart-shopping ml-2"></i>
+                    </a>
+                    <a href="#sneak-peek" class="bg-white text-gray-800 font-semibold px-8 py-4 rounded-full shadow border border-gray-200 hover:bg-gray-50 transition text-center">
+                        Read Sample <i class="fa-solid fa-file-pdf ml-1.5 text-emerald-600"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right 3D Floating Book Mockup -->
+            <div class="relative flex justify-center items-center">
+                <div class="w-72 h-72 lg:w-96 lg:h-96 rounded-full bg-emerald-200/50 absolute -z-10 blur-3xl"></div>
+                
+                <div class="floating-book relative shadow-2xl rounded-2xl overflow-hidden border-4 border-white">
+                    <img src="assets/img/photo.png" 
+                         alt="Boipoka Book Cover" 
+                         class="w-72 sm:w-80 lg:w-96 h-auto object-cover rounded-xl shadow-inner">
+                    
+                    <!-- Special Logo Badge on Cover -->
+                    <div class="absolute top-4 right-4 bg-emerald-600/90 text-white text-xs px-3 py-1.5 rounded-full font-bold shadow-md backdrop-blur-sm">
+                        Boipoka Exclusive
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- -------AYUN AHMED BOOKS COLLECTION -->
+    <section class="py-16 bg-emerald-50/40 border-t border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Header -->
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold tracking-widest text-emerald-700 uppercase bg-emerald-100 px-4 py-1.5 rounded-full border border-emerald-200 shadow-sm">
+                    বিশেষ কালেকশন
+                </span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-3">
+                    হুমায়ূন আহমেদ উপন্যাস সম্ভার
+                </h2>
+                <p class="text-gray-600 text-sm mt-2">
+                    জনপ্রিয় কালজয়ী উপন্যাসসমূহ সেরা ছাড়ে সংগ্রহ করুন
+                </p>
+            </div>
+
+            <!-- Books Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <!-- Book 1: দেবী -->
+                <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-56 bg-gray-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-2 border border-gray-100">
+                            <img src="assets/img/boi.jpg" alt="দেবী" class="h-full object-cover rounded shadow-sm w-full">
+                        </div>
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded uppercase">মিসির আলি সিরিজ</span>
+                        <h3 class="font-bold text-lg text-gray-800 mt-1">দেবী</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">মনস্তাত্ত্বিক ও রহস্যঘেরা মিসির আলি সিরিজের প্রথম অসামান্য সৃষ্টি।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <span class="font-extrabold text-emerald-600 text-lg">৳ ২২০</span>
+                        <a href="#order" class="bg-emerald-600 text-white text-xs px-3.5 py-2 rounded-lg font-bold hover:bg-emerald-700 transition">অর্ডার করুন</a>
+                    </div>
+                </div>
+
+                <!-- Book 2: ময়ূরাক্ষী -->
+                <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-56 bg-gray-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-2 border border-gray-100">
+                            <img src="assets/img/muyar.png" alt="ময়ূরাক্ষী" class="h-full object-cover rounded shadow-sm w-full">
+                        </div>
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded uppercase">হিমু সিরিজ</span>
+                        <h3 class="font-bold text-lg text-gray-800 mt-1">ময়ূরাক্ষী</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">হলুদ পাঞ্জাবি পরা অদ্ভুত এক জ্যোৎস্নাপ্রেমী যুবকের গল্প।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <span class="font-extrabold text-emerald-600 text-lg">৳ ২০০</span>
+                        <a href="#order" class="bg-emerald-600 text-white text-xs px-3.5 py-2 rounded-lg font-bold hover:bg-emerald-700 transition">অর্ডার করুন</a>
+                    </div>
+                </div>
+
+                <!-- Book 3: জোছনা ও জননীর গল্প -->
+                <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-56 bg-gray-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-2 border border-gray-100">
+                            <img src="assets/img/boi.jpg" alt="জোছনা ও জননীর গল্প" class="h-full object-cover rounded shadow-sm w-full">
+                        </div>
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded uppercase">মুক্তিযুদ্ধভিত্তিক</span>
+                        <h3 class="font-bold text-lg text-gray-800 mt-1">জোছনা ও জননীর গল্প</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">১৯৭১ সালের মহান মুক্তিযুদ্ধের প্রেক্ষাপটে লেখা মহাকাব্যিক উপন্যাস।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <span class="font-extrabold text-emerald-600 text-lg">৳ ৪৫০</span>
+                        <a href="#order" class="bg-emerald-600 text-white text-xs px-3.5 py-2 rounded-lg font-bold hover:bg-emerald-700 transition">অর্ডার করুন</a>
+                    </div>
+                </div>
+
+                <!-- Book 4: শ্রাবণ মেঘের দিন -->
+                <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-56 bg-gray-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-2 border border-gray-100">
+                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=400" alt="শ্রাবণ মেঘের দিন" class="h-full object-cover rounded shadow-sm w-full">
+                        </div>
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded uppercase">গ্রাম্য উপন্যাস</span>
+                        <h3 class="font-bold text-lg text-gray-800 mt-1">শ্রাবণ মেঘের দিন</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">গ্রামীন জীবনের রূপগাথা ও সুরের মায়ায় জড়ানো এক অনন্য গল্প।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <span class="font-extrabold text-emerald-600 text-lg">৳ ২৫০</span>
+                        <a href="#order" class="bg-emerald-600 text-white text-xs px-3.5 py-2 rounded-lg font-bold hover:bg-emerald-700 transition">অর্ডার করুন</a>
+                    </div>
+                </div>
+
+                <!-- Book 5: দারুচিনি দ্বীপ -->
+                <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-56 bg-gray-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-2 border border-gray-100">
+                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=400" alt="দারুচিনি দ্বীপ" class="h-full object-cover rounded shadow-sm w-full">
+                        </div>
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded uppercase">শুভ্র সিরিজ</span>
+                        <h3 class="font-bold text-lg text-gray-800 mt-1">দারুচিনি দ্বীপ</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">একদল তরুণের আনন্দময় সেন্টমার্টিন সফরের দারুণ উপন্যাস।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <span class="font-extrabold text-emerald-600 text-lg">৳ ২৪০</span>
+                        <a href="#order" class="bg-emerald-600 text-white text-xs px-3.5 py-2 rounded-lg font-bold hover:bg-emerald-700 transition">অর্ডার করুন</a>
+                    </div>
+                </div>
+
+                <!-- Book 6: কৃষ্ণপক্ষ -->
+                <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-56 bg-gray-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-2 border border-gray-100">
+                            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=400" alt="কৃষ্ণপক্ষ" class="h-full object-cover rounded shadow-sm w-full">
+                        </div>
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded uppercase">রোমান্টিক</span>
+                        <h3 class="font-bold text-lg text-gray-800 mt-1">কৃষ্ণপক্ষ</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">অপেক্ষার যন্ত্রণা ও ভালোবাসার টান নিয়ে লেখা চমৎকার উপন্যাস।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <span class="font-extrabold text-emerald-600 text-lg">৳ ২৩০</span>
+                        <a href="#order" class="bg-emerald-600 text-white text-xs px-3.5 py-2 rounded-lg font-bold hover:bg-emerald-700 transition">অর্ডার করুন</a>
+                    </div>
+                </div>
+
+                <!-- Book 7: বাদশাহ নামদার -->
+                <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-56 bg-gray-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-2 border border-gray-100">
+                            <img src="https://images.unsplash.com/photo-1463320726281-696a485928c7?auto=format&fit=crop&q=80&w=400" alt="বাদশাহ নামদার" class="h-full object-cover rounded shadow-sm w-full">
+                        </div>
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded uppercase">ইতিহাসভিত্তিক</span>
+                        <h3 class="font-bold text-lg text-gray-800 mt-1">বাদশাহ নামদার</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">মুঘল সম্রাট হুমায়ূনের জীবন ও তৎকালীন ইতিহাসের ওপর লেখা।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <span class="font-extrabold text-emerald-600 text-lg">৳ ৩৫০</span>
+                        <a href="#order" class="bg-emerald-600 text-white text-xs px-3.5 py-2 rounded-lg font-bold hover:bg-emerald-700 transition">অর্ডার করুন</a>
+                    </div>
+                </div>
+
+                <!-- Book 8: দেয়াল -->
+                <div class="bg-white rounded-2xl p-4 border border-gray-100 shadow-sm hover:shadow-xl transition duration-300 flex flex-col justify-between group">
+                    <div>
+                        <div class="h-56 bg-gray-50 rounded-xl overflow-hidden mb-4 flex items-center justify-center p-2 border border-gray-100">
+                            <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80&w=400" alt="দেয়াল" class="h-full object-cover rounded shadow-sm w-full">
+                        </div>
+                        <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded uppercase">রাজনৈতিক ইতিহাস</span>
+                        <h3 class="font-bold text-lg text-gray-800 mt-1">দেয়াল</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">স্বাধীনতা-উত্তর বাংলাদেশের রাজনৈতিক ঘটনাবলী নিয়ে উপন্যাস।</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
+                        <span class="font-extrabold text-emerald-600 text-lg">৳ ৩৮০</span>
+                        <a href="#order" class="bg-emerald-600 text-white text-xs px-3.5 py-2 rounded-lg font-bold hover:bg-emerald-700 transition">অর্ডার করুন</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 3. BONUS & GUARANTEE CATEGORIES ================= -->
+    <!-- 3. BONUS & GUARANTEE CATEGORIES -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="bg-emerald-50/50 rounded-2xl p-6 border border-emerald-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
+                            <i class="fa-solid fa-file-pdf text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">ফ্রি স্যাম্পল PDF</h3>
+                        <p class="text-sm text-gray-600">অর্ডার করার আগে বইটির প্রথম অধ্যায় ফ্রিতে পড়ে নিজের সিদ্ধান্ত নিন।</p>
+                    </div>
+                    <a href="#sneak-peek" class="mt-4 text-xs font-bold text-emerald-700 flex items-center gap-1 hover:underline">
+                        ডাউনলোড করুন <i class="fa-solid fa-arrow-down text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-emerald-50/50 rounded-2xl p-6 border border-emerald-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
+                            <i class="fa-solid fa-shield-halved text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">১০০% রিপ্লেসমেন্ট গ্যারান্টি</h3>
+                        <p class="text-sm text-gray-600">কোনো মিসপ্রিন্ট বা ছেঁড়া পাতা থাকলে ৩ দিনের মধ্যে সম্পূর্ণ বিনামূল্যে নতুন বই পাবেন।</p>
+                    </div>
+                    <a href="#" class="mt-4 text-xs font-bold text-emerald-700 flex items-center gap-1 hover:underline">
+                        অফিসিয়াল পলিসি <i class="fa-solid fa-check text-[10px]"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-emerald-50/50 rounded-2xl p-6 border border-emerald-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
+                            <i class="fa-solid fa-headset text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-2">২৪/১২ কাস্টমার সাপোর্ট</h3>
+                        <p class="text-sm text-gray-600">বই ডেলিভারির যেকোনো আপডেট জানতে আমাদের সাথে যেকোনো সময় কথা বলুন।</p>
+                    </div>
+                    <span class="mt-4 text-xs font-bold text-emerald-700">call: 01843589154</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+                
+              
+
+    <!-- ================= 4. BOOK ITEM MENU (ACCORDION TABLE OF CONTENTS) ================= -->
+    <section id="sneak-peek" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-emerald-600 font-semibold tracking-wider uppercase text-sm">একনজরে সূচিপত্র</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-1">বইয়ের মূল অধ্যায়সমূহ</h2>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- Accordion Item 1 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="accordion-btn w-full px-6 py-4 text-left font-bold text-lg text-gray-800 flex justify-between items-center hover:bg-emerald-50/50 transition">
+                        <span>অধ্যায় ১: মাইন্ডসেট ও নতুন সূচনা</span>
+                        <i class="fa-solid fa-chevron-down text-emerald-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-gray-50/50">
+                        <ul class="py-4 space-y-2 text-gray-600 text-sm">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> কীভাবে চিন্তাভাবনার ধরণ পরিবর্তন করবেন</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> ভয় কাটিয়ে কাজে নামার কার্যকরী ট্রিকস</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 2 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="accordion-btn w-full px-6 py-4 text-left font-bold text-lg text-gray-800 flex justify-between items-center hover:bg-emerald-50/50 transition">
+                        <span>অধ্যায় ২: টাইম ম্যানেজমেন্ট ও প্রোডাক্টিভিটি</span>
+                        <i class="fa-solid fa-chevron-down text-emerald-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-gray-50/50">
+                        <ul class="py-4 space-y-2 text-gray-600 text-sm">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> ২৪ ঘণ্টাকে কাজে লাগানোর ৮০/২০ ফর্মুলা</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> অলসতা দূর করার বৈজ্ঞানিক উপায়</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <button class="accordion-btn w-full px-6 py-4 text-left font-bold text-lg text-gray-800 flex justify-between items-center hover:bg-emerald-50/50 transition">
+                        <span>অধ্যায় ৩: আর্থিক স্বাধীনতা ও সিদ্ধান্ত গ্রহণ</span>
+                        <i class="fa-solid fa-chevron-down text-emerald-600 transition-transform"></i>
+                    </button>
+                    <div class="accordion-content px-6 bg-gray-50/50">
+                        <ul class="py-4 space-y-2 text-gray-600 text-sm">
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> ক্যারিয়ার ও আয়ের নতুন সুযোগ তৈরি</li>
+                            <li class="flex items-center"><i class="fa-solid fa-check text-emerald-500 mr-2"></i> দীর্ঘমেয়াদী সফলতার রোডম্যাপ</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 5. WHY CHOOSE THIS BOOK? ================= -->
+    <section id="about-book" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">কেন এই "Boipoka" বইটি পড়বেন?</h2>
+                <p class="text-gray-500 mt-2">বাজারে হাজারো বইয়ের ভিড়ে এটি আপনার জন্য কেন সেরা পছন্দ</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50/50 hover:border-emerald-200 hover:shadow-md transition">
+                    <div class="text-emerald-600 text-3xl mb-4"><i class="fa-solid fa-feather"></i></div>
+                    <h3 class="font-bold text-lg mb-2">সহজ-সরল ভাষা</h3>
+                    <p class="text-gray-600 text-sm">কোনো জটিল শব্দ ছাড়াই প্রাঞ্জল ভাষায় লেখা, যা সহজেই বুঝতে পারবেন।</p>
+                </div>
+
+                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50/50 hover:border-emerald-200 hover:shadow-md transition">
+                    <div class="text-emerald-600 text-3xl mb-4"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3 class="font-bold text-lg mb-2">প্র্যাক্টিক্যাল গাইডলাইন</h3>
+                    <p class="text-gray-600 text-sm">শুধু থিওরি নয়, রয়েছে দৈনন্দিন জীবনে প্রয়োগ করার মতো আসল কৌশল।</p>
+                </div>
+
+                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50/50 hover:border-emerald-200 hover:shadow-md transition">
+                    <div class="text-emerald-600 text-3xl mb-4"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3 class="font-bold text-lg mb-2">বাস্তব জীবনের উদাহরণ</h3>
+                    <p class="text-gray-600 text-sm">দেশী ও আন্তর্জাতিক নানা সফল মানুষের বাস্তব জীবনের অনুপ্রেরণামূলক গল্প।</p>
+                </div>
+
+                <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50/50 hover:border-emerald-200 hover:shadow-md transition">
+                    <div class="text-emerald-600 text-3xl mb-4"><i class="fa-solid fa-gem"></i></div>
+                    <h3 class="font-bold text-lg mb-2">প্রিন্ট কোয়ালিটি</h3>
+                    <p class="text-gray-600 text-sm">উন্নতমানের হোয়াইট পেপার ও প্রিমিয়াম হার্ডকভার বাঁধাই।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 6. INTERACTIVE STATS SECTION ================= -->
+    <section id="stats-section" class="py-12 bg-emerald-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-3 gap-6 text-center">
+            <div>
+                <h3 class="text-3xl sm:text-5xl font-extrabold mb-1"><span class="counter" data-target="5000">0</span>+</h3>
+                <p class="text-xs sm:text-base text-emerald-100">হ্যাপি রিডার্স</p>
+            </div>
+            <div>
+                <h3 class="text-3xl sm:text-5xl font-extrabold mb-1"><span class="counter" data-target="50">0</span>+</h3>
+                <p class="text-xs sm:text-base text-emerald-100">বুক স্টোর</p>
+            </div>
+            <div>
+                <h3 class="text-3xl sm:text-5xl font-extrabold mb-1">৪.৯ ★</h3>
+                <p class="text-xs sm:text-base text-emerald-100">পাঠক রেটিং</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 7. MEET THE AUTHOR ================= -->
+    <section id="author" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-emerald-50/50 rounded-3xl p-8 sm:p-12 border border-emerald-100 flex flex-col md:flex-row items-center gap-8">
+                <img src="assets/img/humaunsir.jpg" 
+                     alt="Author Image" 
+                     class="w-40 h-40 sm:w-48 sm:h-48 rounded-full object-cover shadow-xl border-4 border-white">
+                
+                <div class="text-center md:text-left space-y-4">
+                    <span class="text-emerald-700 font-bold text-sm uppercase">লেখক পরিচিতি</span>
+                    <h2 class="text-3xl font-bold text-gray-900">হুমায়ূন আহমেদ </h2>
+                    <p class="text-gray-600 leading-relaxed text-sm sm:text-base">
+                        হুমায়ূন আহমেদ হলেন বাংলা সাহিত্যের এক জননন্দিত কথাসাহিত্যিক, নাট্যকার ও চলচ্চিত্র নির্মাতা। তিনি ১৯৪৮ সালের ১৩ নভেম্বর নেত্রকোণায় জন্মগ্রহণ করেন এবং ২০১২ সালের ১৯ জুলাই মারা যান। তাঁর সৃষ্ট জনপ্রিয় চরিত্রগুলোর মধ্যে হিমু, মিসির আলী ও বাকের ভাই বিশেষভাবে উল্লেখযোগ্য। এনেছে।
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-4 text-emerald-600 text-xl pt-2">
+                        <a href="#" class="hover:text-emerald-800 transition"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-emerald-800 transition"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="hover:text-emerald-800 transition"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 8. REVIEWS SECTION WITH DYNAMIC FORM ================= -->
+    <section id="reviews" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-emerald-600 font-semibold uppercase text-sm">পাঠকদের মতামত</span>
+                <h2 class="text-3xl font-bold text-gray-900 mt-1">পাঠক কী বলছেন?</h2>
+            </div>
+
+            <!-- Existing Reviews Grid -->
+            <div id="reviews-grid" class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="text-yellow-400 text-sm mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-600 text-sm mb-4">"অসাধারণ একটি বই! বইটি পড়ে কাজের প্রতি আমার মনোযোগ অনেক বেড়ে গিয়েছে।"</p>
+                    <div class="font-bold text-gray-800 text-sm">- তানভীর আহমেদ</div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="text-yellow-400 text-sm mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-600 text-sm mb-4">"boipoka টিমকে ধন্যবাদ দ্রুত ডেলিভারি দেওয়ার জন্য। বইয়ের বাঁধাই চমৎকার!"</p>
+                    <div class="font-bold text-gray-800 text-sm">- সারাহ রহমান</div>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div class="text-yellow-400 text-sm mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-600 text-sm mb-4">"টাইম ম্যানেজমেন্টের অধ্যায়টি আমার দৃষ্টিভঙ্গি বদলে দিয়েছে।"</p>
+                    <div class="font-bold text-gray-800 text-sm">- মো: শফিক</div>
+                </div>
+            </div>
+
+            <!-- Write a Review Form -->
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-md border border-gray-200">
+                <h3 class="text-xl font-bold text-gray-800 text-center mb-4">আপনার নিজস্ব রিভিউ লিখুন</h3>
+                <form id="review-form" class="space-y-4">
+                    <div>
+                        <input type="text" id="rev-name" required placeholder="আপনার নাম" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none">
+                    </div>
+                    <div>
+                        <select id="rev-rating" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none">
+                            <option value="5">⭐⭐⭐⭐⭐ (5 Star)</option>
+                            <option value="4">⭐⭐⭐⭐ (4 Star)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <textarea id="rev-text" required rows="3" placeholder="বইটি সম্পর্কে মতামত লিখুন..." class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-emerald-600 text-white font-semibold py-2.5 rounded-lg hover:bg-emerald-700 transition">
+                        রিভিউ জমা দিন
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 9. PAYMENT & DIRECT ORDER FORM ================= -->
+    <section id="order" class="py-16 bg-white">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-emerald-50/60 p-8 sm:p-12 rounded-3xl border border-emerald-200 shadow-xl">
+                <div class="text-center mb-8">
+                    <span class="bg-emerald-600 text-white text-xs px-3 py-1 rounded-full uppercase font-bold">অফার প্রাইস</span>
+                    <h2 class="text-3xl font-bold text-gray-900 mt-2">সহজেই অর্ডার কমপ্লিট করুন</h2>
+                    <p class="text-gray-600 text-sm mt-1">বইয়ের রেগুলার মূল্য: <del class="text-red-500">৳৫৫০</del> | আজকের অফার মূল্য: <strong class="text-emerald-700 text-lg">৳৩৫০</strong></p>
+                </div>
+
+                <form id="checkout-form" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">আপনার নাম *</label>
+                        <input type="text" required placeholder="পুরো নাম লিখুন" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">মোবাইল নম্বর *</label>
+                        <input type="tel" required placeholder="017XXXXXXXX" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 outline-none">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-1">পূর্ণাঙ্গ ঠিকানা *</label>
+                        <textarea required rows="2" placeholder="জেলা, থানা ও এলাকার নামসহ লিখুন" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-emerald-500 outline-none"></textarea>
+                    </div>
+
+                    <!-- Payment Method Selection -->
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-700 mb-2">পেমেন্ট মেথড সিলেক্ট করুন</label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <label class="border p-3 rounded-xl flex flex-col items-center justify-center cursor-pointer hover:border-emerald-500 bg-white">
+                                <input type="radio" name="payment" value="COD" checked class="accent-emerald-600 mb-1">
+                                <span class="text-xs font-bold">ক্যাশ অন ডেলিভারি</span>
+                            </label>
+                            <label class="border p-3 rounded-xl flex flex-col items-center justify-center cursor-pointer hover:border-emerald-500 bg-white">
+                                <input type="radio" name="payment" value="bKash" class="accent-emerald-600 mb-1">
+                                <span class="text-xs font-bold text-pink-600">বিকাশ</span>
+                            </label>
+                            <label class="border p-3 rounded-xl flex flex-col items-center justify-center cursor-pointer hover:border-emerald-500 bg-white">
+                                <input type="radio" name="payment" value="Nagad" class="accent-emerald-600 mb-1">
+                                <span class="text-xs font-bold text-orange-600">নগদ</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-emerald-600 text-white font-bold text-lg py-4 rounded-xl hover:bg-emerald-700 transition shadow-lg mt-4">
+                        কনফার্ম অর্ডার করুন (৳৩৫০)
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ================= 10. NEWSLETTER SECTION ================= -->
+    <section class="py-12 bg-emerald-800 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center space-y-4">
+            <h2 class="text-2xl sm:text-3xl font-bold">নতুন বইয়ের আপডেট ও ডিসকাউন্ট চান?</h2>
+            <p class="text-emerald-100 text-sm">আমাদের মেম্বারশিপে জয়েন করুন এবং নতুন বই প্রকাশের সাথে সাথে ডিসকাউন্ট কুপন পান।</p>
+
+            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto pt-2">
+                <input type="email" placeholder="আপনার ইমেইল অ্যাড্রেস" required class="px-5 py-3 rounded-xl text-gray-800 focus:outline-none w-full">
+                <button type="submit" class="bg-gray-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-700 transition">
+                    সাবস্ক্রাইব
+                </button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- ================= 11. FOOTER SECTION & CONTACT ================= -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10 pb-12 border-b border-gray-800">
+            
+            <!-- Brand Info -->
+            <div class="space-y-3">
+                <div class="flex items-center space-x-2">
+                    <div class="w-9 h-9 bg-emerald-600 text-white rounded-lg flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-white">boipoka</span>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    পাঠকদের হাতে খাঁটি জ্ঞান ও সেরা মানের বই পৌঁছে দেওয়াই আমাদের লক্ষ্য।
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3">কুইক লিংকস</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="#home" class="hover:text-emerald-400">হোম</a></li>
+                    <li><a href="#about-book" class="hover:text-emerald-400">বই পরিচিতি</a></li>
+                    <li><a href="#author" class="hover:text-emerald-400">লেখক পরিচিতি</a></li>
+                    <li><a href="#" class="hover:text-emerald-400">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Official Contact Details -->
+            <div>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3">অফিসিয়াল যোগাযোগ</h4>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex items-center space-x-2">
+                     <i class="fa-solid fa-location-dot text-emerald-500"></i>
+                       <span>Rajasthali,Rangmati,Bangladesh</span>
+                     </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-envelope text-emerald-500"></i>
+                        <span>choitanyatanchanya@gmmail.com</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-phone text-emerald-500"></i>
+                        <span>01843589154</span>
+                    </li>
+                </ul>
+
+                <!-- Payment Partners Icons -->
+                <div class="mt-4 pt-4 border-t border-gray-800">
+                    <span class="text-[10px] text-gray-500 uppercase block mb-2">Accepted Payments</span>
+                    <div class="flex space-x-3 text-lg text-gray-400">
+                        <i class="fa-solid fa-wallet hover:text-pink-500" title="bKash"></i>
+                        <i class="fa-solid fa-mobile-screen hover:text-orange-500" title="Nagad"></i>
+                        <i class="fa-solid fa-credit-card hover:text-blue-500" title="Card"></i>
+                    </div>
+                    <div>
+                </div>
+            </div>
+          
+
+
+        </div>
+
+        <p>© 2026 boipoka</p>
+        <p class="text-xs text-gray-400 mt-1">
+            Design by <span class="text-emerald-600 font-bold">Choitanya Tanchangya</span>
+        </p>
+
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+</html>

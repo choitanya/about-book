@@ -1,0 +1,50 @@
+ /* <!-- CSS STYLES & ANIMATIONS - */
+
+        body {
+            font-family: 'Hind Siliguri', 'Poppins', sans-serif;
+        }
+
+        /* Continuous Color Cycling Animation for Green Spectrum */
+        @keyframes colorCycle {
+            0% { color: #10B981; }    /* Green-500 */
+            25% { color: #059669; }   /* Green-600 */
+            50% { color: #34D399; }   /* Green-400 */
+            75% { color: #047857; }   /* Green-700 */
+            100% { color: #10B981; }  /* Green-500 */
+        }
+
+        /* Applied to special titles for smooth continuous loading color shift */
+        .animated-color-text {
+            animation: colorCycle 2s infinite alternate;
+        }
+
+        /* 3D Floating Book Effect for Hero Section */
+        @keyframes floatBook {
+            0% { transform: translateY(0px) rotate(-3deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(-3deg); }
+        }
+
+        .floating-book {
+            animation: floatBook 4s ease-in-out infinite;
+        }
+
+        /* Custom Accordion Styling Transition */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+    
+
+
+    /* Green Dynamic Text Animation */
+    @keyframes greenGlow {
+        0% { color: #059669; }
+        50% { color: #3d7965; }
+        100% { color: #3e899a; }
+    }
+    .animated-green-text {
+        animation: greenGlow 2.5s infinite alternate;
+    }
+

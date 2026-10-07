@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>লেখক পরিচিতি - হুমায়ূন আহমেদ | Boipoka</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+
+    <!-- Google Fonts & FontAwesome CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-['Hind_Siliguri','Poppins',sans-serif]">
+
+    <!-- ================= 1. ANNOUNCEMENT BAR ================= -->
+    <div class="bg-gray-900 text-white text-[11px] font-medium py-1 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="w-full text-center sm:text-left">
+                <span>🎉 হুমায়ূন আহমেদের যেকোনো বইয়ে <strong class="text-emerald-400">১৫% বিশেষ ছাড়!</strong> প্রোমো কোড: <span class="bg-emerald-600/30 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-500/30 font-mono">HUMAYUN15</span></span>
+            </div>
+            <div class="hidden sm:flex items-center space-x-3 text-gray-300 text-[10px]">
+                <a href="tel:01843589154" class="hover:text-emerald-400 transition"><i class="fa-solid fa-phone mr-1"></i>01843589154</a>
+                <span>|</span>
+                <a href="contact.html" class="hover:text-emerald-400 transition">সাহায্য কেন্দ্র</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 2. NAVBAR ================= -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-3 cursor-pointer">
+                <img src="assets/img/dj logo.png" alt="boipoka logo" class="h-9 w-auto object-contain">
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tight text-emerald-700 leading-tight">Boipoka</span>
+                    <span class="text-[9px] tracking-widest text-emerald-600 font-semibold uppercase">বইপোকা ক্লাব</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex space-x-6 text-xs font-bold uppercase tracking-wider text-gray-700">
+                <a href="index.html" class="hover:text-emerald-600 transition-colors">Home</a>
+                <a href="about-book.html" class="hover:text-emerald-600 transition-colors">About Book</a>
+                <a href="author.html" class="text-emerald-600 transition-colors">Author</a>
+                <a href="sneak-peek.html" class="hover:text-emerald-600 transition-colors">Sneak Peek</a>
+                <a href="reviews.html" class="hover:text-emerald-600 transition-colors">Reviews</a>
+                <a href="contact.html" class="hover:text-emerald-600 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Buy Button -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="index.html#order" class="bg-emerald-600 text-white font-semibold text-xs px-5 py-2 rounded-full shadow-md hover:bg-emerald-700 transition">
+                    Buy Now <i class="fa-solid fa-bag-shopping ml-1"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="lg:hidden text-2xl text-gray-700 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 shadow-xl">
+            <a href="index.html" class="block text-gray-700 hover:text-emerald-600 font-medium">Home</a>
+            <a href="about-book.html" class="block text-gray-700 hover:text-emerald-600 font-medium">About Book</a>
+            <a href="author.html" class="block text-emerald-600 font-bold">Author</a>
+            <a href="sneak-peek.html" class="block text-gray-700 hover:text-emerald-600 font-medium">Sneak Peek</a>
+            <a href="reviews.html" class="block text-gray-700 hover:text-emerald-600 font-medium">Reviews</a>
+            <a href="contact.html" class="block text-gray-700 hover:text-emerald-600 font-medium">Contact</a>
+        </div>
+    </header>
+
+    <!-- ================= 3. AUTHOR HERO SECTION ================= -->
+    <section class="bg-gradient-to-br from-emerald-900 via-gray-900 to-emerald-950 text-white py-16 px-4 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-12 gap-8 items-center">
+            
+            <!-- Author Image Card -->
+            <div class="md:col-span-5 flex justify-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-3xl blur opacity-30 group-hover:opacity-75 transition duration-500"></div>
+                    <div class="relative w-64 h-80 sm:w-72 sm:h-96 rounded-2xl overflow-hidden border-2 border-emerald-500/30 shadow-2xl bg-gray-800">
+                        <img src="assets/img/humaunsir.jpg" alt="হুমায়ূন আহমেদ" class="w-full h-full object-cover object-center transform group-hover:scale-105 transition duration-500" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/e/e0/Humayun_Ahmed_2010.jpg'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Author Bio Brief -->
+            <div class="md:col-span-7 space-y-4 text-center md:text-left">
+                <span class="text-emerald-400 font-semibold text-xs tracking-widest uppercase bg-emerald-950/80 border border-emerald-500/30 px-3 py-1 rounded-full">কথা সাহিত্যিক ও নির্মাতা</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">হুমায়ূন আহমেদ</h1>
+                <p class="text-emerald-300 font-medium text-sm sm:text-base">১৩ নভেম্বর ১৯৪৮ – ১৯ জুলাই ২০১২</p>
+                <p class="text-gray-300 text-xs sm:text-sm leading-relaxed max-w-2xl">
+                    বাংলাদেশের আধুনিক বাংলা কথাসাহিত্যের অন্যতম জনপ্রিয় লেখক, নাট্যকার, চলচ্চিত্র নির্মাতা ও গীতিকার। তিনি হিমু, মিসির আলি ও শুভ্র-র মতো কালজয়ী চরিত্র সৃষ্টির মাধ্যমে কোটি বাঙালির হৃদয় জয় করেছেন।
+                </p>
+
+                <!-- Quick Meta Badges -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-2 pt-2">
+                    <span class="bg-white/10 text-emerald-300 text-[11px] px-3 py-1 rounded-full border border-white/10"><i class="fa-solid fa-book mr-1.5"></i>৩০০+ প্রকাশিত গ্রন্থ</span>
+                    <span class="bg-white/10 text-emerald-300 text-[11px] px-3 py-1 rounded-full border border-white/10"><i class="fa-solid fa-award mr-1.5"></i>একুশে পদক বিজয়ী</span>
+                    <span class="bg-white/10 text-emerald-300 text-[11px] px-3 py-1 rounded-full border border-white/10"><i class="fa-solid fa-film mr-1.5"></i>জাতীয় চলচ্চিত্র পুরস্কারপ্রাপ্ত</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 4. AUTHOR DETAILED STORY & FAMOUS CHARACTERS ================= -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <!-- Biography Details -->
+            <div class="md:col-span-2 bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 space-y-6">
+                <div>
+                    <h2 class="text-xl font-bold text-gray-900 border-b pb-3 border-gray-100 flex items-center gap-2">
+                        <i class="fa-solid fa-feather-pointed text-emerald-600"></i> জীবন ও সাহিত্যকর্ম
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mt-3">
+                        হুমায়ূন আহমেদ ১৯৪৮ সালের ১৩ নভেম্বর নেত্রকোণার কুতুবপুরে জন্মগ্রহণ করেন। ঢাকা বিশ্ববিদ্যালয় থেকে রসায়নে স্নাতকোত্তর এবং মার্কিন যুক্তরাষ্ট্রের নর্থ ডাকোটা স্টেট ইউনিভার্সিটি থেকে পিএইচডি ডিগ্রি অর্জন করেন। কর্মজীবনে তিনি ঢাকা বিশ্ববিদ্যালয়ের রসায়ন বিভাগের অধ্যাপক ছিলেন।
+                    </p>
+                    <p class="text-xs sm:text-sm text-gray-600 leading-relaxed mt-2">
+                        ১৯৭২ সালে প্রকাশিত তাঁর প্রথম উপন্যাস <strong>'নন্দিত নড়কে'</strong> দিয়ে সাহিত্যজগতে আত্মপ্রকাশ করেন। এরপর <strong>'শঙ্খনীল কারাগার'</strong>, <strong>'জোছনা ও জননীর গল্প'</strong>, <strong>'দেয়াল'</strong>-এর মতো কালজয়ী উপন্যাস দিয়ে তিনি আধুনিক বাংলা কথাসাহিত্যকে এক নতুন উচ্চতায় নিয়ে যান।
+                    </p>
+                </div>
+
+                <!-- Famous Characters Section -->
+                <div>
+                    <h3 class="text-base font-bold text-gray-900 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-masks-theater text-emerald-600"></i> সৃষ্টি করা কালজয়ী চরিত্রসমূহ
+                    </h3>
+                    <div class="grid sm:grid-cols-3 gap-3">
+                        <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-200/60">
+                            <span class="font-bold text-amber-800 text-xs block">হিমু</span>
+                            <p class="text-[11px] text-gray-600 mt-0.5">হলুদ পাঞ্জাবি পরা, খালি পায়ে রাতে হেঁটে বেড়ানো এক রহস্যময় তরুণ।</p>
+                        </div>
+                        <div class="bg-blue-50/60 p-3 rounded-xl border border-blue-200/60">
+                            <span class="font-bold text-blue-800 text-xs block">মিসির আলি</span>
+                            <p class="text-[11px] text-gray-600 mt-0.5">বিজ্ঞান, যুক্তি ও মনস্তত্ত্ব দিয়ে কঠিন রহস্যের জট খোলা এক শিক্ষক।</p>
+                        </div>
+                        <div class="bg-purple-50/60 p-3 rounded-xl border border-purple-200/60">
+                            <span class="font-bold text-purple-800 text-xs block">শুভ্র</span>
+                            <p class="text-[11px] text-gray-600 mt-0.5">মোটা চশমা পরা, ধবধবে ফর্সা ও নিষ্পাপ মনের এক সৎ যুবক।</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quote Block -->
+                <blockquote class="bg-emerald-50 border-l-4 border-emerald-600 p-4 rounded-r-xl">
+                    <p class="text-xs sm:text-sm italic text-emerald-950 font-medium">
+                        "চাঁদের আলোয় সবাই ভালোবাসার কথা বলে, আমি চাঁদ ছাড়া গভীর আঁধারে ভালোবাসার কথা বলতে চাই।"
+                    </p>
+                    <span class="block text-right text-[11px] font-bold text-emerald-700 mt-1">— হুমায়ূন আহমেদ</span>
+                </blockquote>
+            </div>
+
+            <!-- Awards & Filmography Sidebar -->
+            <div class="space-y-4">
+                <!-- Honors & Awards -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <h3 class="text-sm font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-trophy text-emerald-600"></i> সম্মাননা ও পুরস্কার
+                    </h3>
+                    <ul class="space-y-3 text-xs text-gray-600">
+                        <li class="flex items-center gap-3">
+                            <span class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center shrink-0 font-bold"><i class="fa-solid fa-medal"></i></span>
+                            <span><strong>একুশে পদক</strong> (১৯৯৪)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center shrink-0 font-bold"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <span><strong>বাংলা একাডেমি সাহিত্য পুরস্কার</strong> (১৯৮১)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-7 h-7 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center shrink-0 font-bold"><i class="fa-solid fa-clapperboard"></i></span>
+                            <span><strong>জাতীয় চলচ্চিত্র পুরস্কার</strong> (একাধিকবার)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Movies & Dramas -->
+                <div class="bg-emerald-900 text-white p-6 rounded-2xl shadow-md space-y-3">
+                    <h3 class="font-bold text-sm flex items-center gap-2 text-emerald-300">
+                        <i class="fa-solid fa-film"></i> নন্দিত চলচ্চিত্রসমূহ
+                    </h3>
+                    <ul class="text-xs text-emerald-100 space-y-1.5 list-disc list-inside">
+                        <li>আগুনের পরশমণি (১৯৯৪)</li>
+                        <li>শ্রাবণ মেঘের দিন (১৯৯৯)</li>
+                        <li>দুই দুয়ারী (২০০০)</li>
+                        <li>দারুচিনি দ্বীপ (২০০৭)</li>
+                        <li>ঘেটুপুত্র কমলা (২০১২)</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 5. BOOKS BY HUMAYUN AHMED ================= -->
+    <section class="bg-gray-100/70 py-14">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-xl mx-auto mb-10">
+                <h2 class="text-2xl font-bold text-gray-900">হুমায়ূন আহমেদের জনপ্রিয় বইসমূহ</h2>
+                <p class="text-xs text-gray-500 mt-1">আমাদের কালেকশন থেকে আপনার প্রিয় বইটি বেছে নিন</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Book Card 1 -->
+                <div class="bg-white rounded-2xl p-4 border border-gray-200/80 shadow-sm hover:shadow-md transition flex gap-4 items-center">
+                    <div class="w-20 h-28 bg-emerald-800 text-white rounded-lg flex flex-col items-center justify-center p-2 text-center shrink-0">
+                        <i class="fa-solid fa-book-open text-xl mb-1 text-yellow-400"></i>
+                        <span class="text-[10px] font-bold leading-tight">জোছনা ও জননীর গল্প</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-[10px] bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded font-semibold">মুক্তিযুদ্ধ ভিত্তিক</span>
+                        <h3 class="font-bold text-sm text-gray-800">জোছনা ও জননীর গল্প</h3>
+                        <p class="text-[11px] text-gray-500 line-clamp-2">১৯৭১ সালের মহান মুক্তিযুদ্ধের পটভূমিতে রচিত এক মহাকাব্যিক উপন্যাস।</p>
+                        <a href="index.html#order" class="inline-block text-xs text-emerald-600 font-bold hover:underline pt-1">অর্ডার করুন →</a>
+                    </div>
+                </div>
+
+                <!-- Book Card 2 -->
+                <div class="bg-white rounded-2xl p-4 border border-gray-200/80 shadow-sm hover:shadow-md transition flex gap-4 items-center">
+                    <div class="w-20 h-28 bg-amber-600 text-white rounded-lg flex flex-col items-center justify-center p-2 text-center shrink-0">
+                        <i class="fa-solid fa-sun text-xl mb-1 text-amber-200"></i>
+                        <span class="text-[10px] font-bold leading-tight">ময়ূরাক্ষী</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-[10px] bg-amber-100 text-amber-700 px-2 py-0.5 rounded font-semibold">হিমু সিরিজ</span>
+                        <h3 class="font-bold text-sm text-gray-800">ময়ূরাক্ষী</h3>
+                        <p class="text-[11px] text-gray-500 line-clamp-2">হিমু সিরিজের প্রথম ও অন্যতম জনপ্রিয় আত্মপ্রকাশকারী উপন্যাস।</p>
+                        <a href="index.html#order" class="inline-block text-xs text-emerald-600 font-bold hover:underline pt-1">অর্ডার করুন →</a>
+                    </div>
+                </div>
+
+                <!-- Book Card 3 -->
+                <div class="bg-white rounded-2xl p-4 border border-gray-200/80 shadow-sm hover:shadow-md transition flex gap-4 items-center">
+                    <div class="w-20 h-28 bg-indigo-900 text-white rounded-lg flex flex-col items-center justify-center p-2 text-center shrink-0">
+                        <i class="fa-solid fa-magnifying-glass text-xl mb-1 text-indigo-300"></i>
+                        <span class="text-[10px] font-bold leading-tight">দেবী</span>
+                    </div>
+                    <div class="space-y-1">
+                        <span class="text-[10px] bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-semibold">মিসির আলি সিরিজ</span>
+                        <h3 class="font-bold text-sm text-gray-800">দেবী</h3>
+                        <p class="text-[11px] text-gray-500 line-clamp-2">মনস্তাত্ত্বিক রহস্য ও প্যারানরমাল ঘটনা নিয়ে মিসির আলির প্রথম উপন্যাস।</p>
+                        <a href="index.html#order" class="inline-block text-xs text-emerald-600 font-bold hover:underline pt-1">অর্ডার করুন →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 6. FOOTER ================= -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10 pb-12 border-b border-gray-800">
+            
+            <!-- Brand Info -->
+            <div class="space-y-3">
+                <div class="flex items-center space-x-2">
+                    <div class="w-9 h-9 bg-emerald-600 text-white rounded-lg flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-white">boipoka</span>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    পাঠকদের হাতে খাঁটি জ্ঞান ও সেরা মানের বই পৌঁছে দেওয়াই আমাদের লক্ষ্য।
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3">কুইক লিংকস</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="index.html" class="hover:text-emerald-400">হোম</a></li>
+                    <li><a href="about-book.html" class="hover:text-emerald-400">বই পরিচিতি</a></li>
+                    <li><a href="author.html" class="hover:text-emerald-400">লেখক পরিচিতি</a></li>
+                    <li><a href="contact.html" class="hover:text-emerald-400">যোগাযোগ</a></li>
+                </ul>
+            </div>
+
+            <!-- Official Contact Details -->
+            <div>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3">অফিসিয়াল যোগাযোগ</h4>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-location-dot text-emerald-500"></i>
+                        <span>Rajasthali,Rangmati,Bangladesh</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-envelope text-emerald-500"></i>
+                        <span>choitanyatanchanya@gmail.com</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-phone text-emerald-500"></i>
+                        <span>01843589154</span>
+                    </li>
+                </ul>
+
+                <!-- Payment Partners Icons -->
+                <div class="mt-4 pt-4 border-t border-gray-800">
+                    <span class="text-[10px] text-gray-500 uppercase block mb-2">Accepted Payments</span>
+                    <div class="flex space-x-3 text-lg text-gray-400">
+                        <i class="fa-solid fa-wallet hover:text-pink-500" title="bKash"></i>
+                        <i class="fa-solid fa-mobile-screen hover:text-orange-500" title="Nagad"></i>
+                        <i class="fa-solid fa-credit-card hover:text-blue-500" title="Card"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="py-4 text-center text-sm text-gray-500 bg-gray-900">
+            <p>© 2026 boipoka</p>
+            <p class="text-xs text-gray-400 mt-1">
+                Design by <span class="text-emerald-600 font-bold">Choitanya Tanchangya</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script File Link -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

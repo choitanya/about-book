@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="bn" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>বই সম্পর্কে- হুমায়ূন আহমেদ | Boipoka</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/png" href="assets/img/logo.png">
+
+    <!-- Google Fonts & FontAwesome CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-['Hind_Siliguri','Poppins',sans-serif]">
+
+    <!-- ================= 1. ANNOUNCEMENT BAR ================= -->
+    <div class="bg-gray-900 text-white text-[11px] font-medium py-1 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="w-full text-center sm:text-left">
+                <span>🎉 হুমায়ূন আহমেদের যেকোনো বইয়ে <strong class="text-emerald-400">১৫% বিশেষ ছাড়!</strong> প্রোমো কোড: <span class="bg-emerald-600/30 text-emerald-300 px-1.5 py-0.2 rounded border border-emerald-500/30 font-mono">HUMAYUN15</span></span>
+            </div>
+            <div class="hidden sm:flex items-center space-x-3 text-gray-300 text-[10px]">
+                <a href="tel:01843589154" class="hover:text-emerald-400 transition"><i class="fa-solid fa-phone mr-1"></i>01843589154</a>
+                <span>|</span>
+                <a href="contact.html" class="hover:text-emerald-400 transition">সাহায্য কেন্দ্র</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= 2. NAVBAR ================= -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center space-x-3 cursor-pointer">
+                <img src="assets/img/dj logo.png" alt="boipoka logo" class="h-9 w-auto object-contain">
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tight text-emerald-700 leading-tight">Boipoka</span>
+                    <span class="text-[9px] tracking-widest text-emerald-600 font-semibold uppercase">বইপোকা ক্লাব</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <nav class="hidden lg:flex space-x-6 text-xs font-bold uppercase tracking-wider text-gray-700">
+                <a href="index.html" class="hover:text-emerald-600 transition-colors">Home</a>
+                <a href="about-book.html" class="hover:text-emerald-600 transition-colors">About Book</a>
+                <a href="author.html" class="text-emerald-600 transition-colors">Author</a>
+                <a href="sneak-peek.html" class="hover:text-emerald-600 transition-colors">Sneak Peek</a>
+                <a href="reviews.html" class="hover:text-emerald-600 transition-colors">Reviews</a>
+                <a href="contact.html" class="hover:text-emerald-600 transition-colors">Contact</a>
+            </nav>
+
+            <!-- Buy Button -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="index.html#order" class="bg-emerald-600 text-white font-semibold text-xs px-5 py-2 rounded-full shadow-md hover:bg-emerald-700 transition">
+                    Buy Now <i class="fa-solid fa-bag-shopping ml-1"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger -->
+            <button id="menu-btn" class="lg:hidden text-2xl text-gray-700 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 shadow-xl">
+            <a href="index.html" class="block text-gray-700 hover:text-emerald-600 font-medium">Home</a>
+            <a href="about-book.html" class="block text-gray-700 hover:text-emerald-600 font-medium">About Book</a>
+            <a href="author.html" class="block text-emerald-600 font-bold">Author</a>
+            <a href="sneak-peek.html" class="block text-gray-700 hover:text-emerald-600 font-medium">Sneak Peek</a>
+            <a href="reviews.html" class="block text-gray-700 hover:text-emerald-600 font-medium">Reviews</a>
+            <a href="contact.html" class="block text-gray-700 hover:text-emerald-600 font-medium">Contact</a>
+        </div>
+    </header>
+
+
+
+
+
+
+
+    <!-- ================= BOOKS GRID SECTION (50 BOOKS) ================= -->
+<section id="books-grid" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow">
+    
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 md:gap-6" id="bookContainer">
+        
+        <!-- Book 1 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=400" alt="নন্দিত নরকে" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">নন্দিত নরকে</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২০০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 2 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=400" alt="শংখনীল কারাগার" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">শংখনীল কারাগার</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২২০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=400" alt="ময়ূরাক্ষী" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">ময়ূরাক্ষী</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৮০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 4 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=400" alt="দেবী" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মিসির আলি</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">দেবী</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২৫০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 5 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=400" alt="জোছনা ও জননীর গল্প" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মুক্তিযুদ্ধ</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">জোছনা ও জননীর গল্প</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳৫৫০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 6 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80&w=400" alt="শ্রাবণ মেঘের দিন" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">শ্রাবণ মেঘের দিন</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২৭০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 7 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?auto=format&fit=crop&q=80&w=400" alt="বাদশাহ নামদার" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">ইতিহাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">বাদশাহ নামদার</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳৩৫০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 8 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=400" alt="আগুনের পরশমণি" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মুক্তিযুদ্ধ</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">আগুনের পরশমণি</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২৪০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 9 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=400" alt="মধ্যাহ্ন" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">মধ্যাহ্ন</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳৪৫০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 10 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=400" alt="নিশাদ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মিসির আলি</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">নিশাদ</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৯০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 11 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=400" alt="দরজার ওপাশে" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">দরজার ওপাশে</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২০০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 12 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=400" alt="ইমা" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-cyan-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">সাই-ফাই</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">ইমা</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৭০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 13 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=400" alt="আয়নাঘর" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">আয়নাঘর</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২১০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 14 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=400" alt="কৃষ্ণপক্ষ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">কৃষ্ণপক্ষ</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২৩০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 15 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80&w=400" alt="অনিল বাগচীর একদিন" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মুক্তিযুদ্ধ</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">অনিল বাগচীর একদিন</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৫০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 16 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=400" alt="আজ হিমুর বিয়ে" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">আজ হিমুর বিয়ে</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৯০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 17 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=400" alt="অন্যভুবন" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-cyan-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">সাই-ফাই</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">অন্যভুবন</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৬০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 18 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=400" alt="আমিই মিসির আলি" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মিসির আলি</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">আমিই মিসির আলি</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২২০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 19 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=400" alt="শুভ্র" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-rose-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">শুভ্র</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">শুভ্র</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২০০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 20 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?auto=format&fit=crop&q=80&w=400" alt="লিফলেট" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">লিফলেট</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৮০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 21 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=400" alt="হিমু" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">হিমু</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২০০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 22 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=400" alt="পারাপার" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">পারাপার</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২১০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 23 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=400" alt="এবং হিমু..." class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">এবং হিমু...</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৯০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 24 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=400" alt="হিমুর হাতে কয়েকটি নীলপদ্ম" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">হিমুর হাতে কয়েকটি নীলপদ্ম</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৮০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 25 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=400" alt="হিমুর দ্বিতীয় প্রহর" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">হিমুর দ্বিতীয় প্রহর</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২২০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 26 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80&w=400" alt="হিমুর রূপালী রাত্রি" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">হিমুর রূপালী রাত্রি</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২০০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 27 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?auto=format&fit=crop&q=80&w=400" alt="হিমু এবং একটি হলুদ পাখি" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">হিমু এবং একটি হলুদ পাখি</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৯০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 28 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=400" alt="হিমুর একলা পরশ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">হিমুর একলা পরশ</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২০০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 29 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=400" alt="হলুদ হিমু কালো র্যাব" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">হলুদ হিমু কালো র্যাব</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২১০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 30 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=400" alt="আজ আমি কোথাও যাব না" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">আজ আমি কোথাও যাব না</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৭০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 31 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=400" alt="হিমুর মধ্যদুপুর" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">হিমুর মধ্যদুপুর</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৮০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 32 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=400" alt="হিমু রিমান্ডে" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">হিমু রিমান্ডে</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৯০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 33 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=400" alt="হিমুর একান্ত সাক্ষাৎকার" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-amber-500 text-white text-[10px] font-bold px-2 py-1 rounded-md">হিমু</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">হিমুর একান্ত সাক্ষাৎকার</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২০০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 34 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=400" alt="অন্যভুবন" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মিসির আলি</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">অন্যভুবন</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২১০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 35 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80&w=400" alt="বৃহন্নলা" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মিসির আলি</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">বৃহন্নলা</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২৩০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 36 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?auto=format&fit=crop&q=80&w=400" alt="ভয়" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মিসির আলি</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">ভয়</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৮০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 37 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=400" alt="বিপদ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মিসির আলি</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">বিপদ</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৯০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 38 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=400" alt="মিসির আলির অমীমাংসিত রহস্য" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মিসির আলি</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">মিসির আলির অমীমাংসিত রহস্য</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২৫০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 39 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=400" alt="হিল্লোল" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মিসির আলি</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">হিল্লোল</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২০০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 40 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=400" alt="মিসির আলি আনসিমিড" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-purple-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">মিসির আলি</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">মিসির আলি আনসিমিড</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২৩০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 41 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=400" alt="পুফি" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-cyan-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">সাই-ফাই</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">পুফি</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৬০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 42 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=400" alt="ফিহা সমীকরণ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-cyan-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">সাই-ফাই</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">ফিহা সমীকরণ</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৮০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 43 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=400" alt="অনন্ত নক্ষত্র বীথি" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-cyan-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">সাই-ফাই</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">অনন্ত নক্ষত্র বীথি</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৭০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 44 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&q=80&w=400" alt="ইরিনা" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-cyan-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">সাই-ফাই</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">ইরিনা</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳১৫০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 45 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1495640388908-05fa85288e61?auto=format&fit=crop&q=80&w=400" alt="কাহন" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-rose-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">শুভ্র</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">দারুচিনি দ্বীপ</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২৫০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 46 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&q=80&w=400" alt="রূপালী দ্বীপ" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">রূপালী দ্বীপ</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২২০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 47 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=400" alt="মেঘ বলেছে যাব যাব" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">মেঘ বলেছে যাব যাব</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২৪০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 48 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=400" alt="লীলাবতী" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">লীলাবতী</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳৩০০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 49 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=400" alt="নক্ষত্রের রাত" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">নক্ষত্রের রাত</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২৮০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Book 50 -->
+        <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden flex flex-col group">
+            <div class="relative overflow-hidden bg-gray-100 aspect-[2/3]">
+                <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=400" alt="মাজরা পোকায় ধরা চাল" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <span class="absolute top-2 right-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md">উপন্যাস</span>
+            </div>
+            <div class="p-4 flex flex-col flex-grow">
+                <h3 class="font-bold text-gray-800 text-base group-hover:text-emerald-600 transition-colors line-clamp-1">মাজরা পোকায় ধরা চাল</h3>
+                <p class="text-xs text-gray-500 mt-1 mb-3">হুমায়ূন আহমেদ</p>
+                <div class="mt-auto flex items-center justify-between">
+                    <span class="text-emerald-700 font-extrabold text-sm">৳২০০</span>
+                    <button class="bg-emerald-50 hover:bg-emerald-600 text-emerald-600 hover:text-white p-2 rounded-lg transition-colors text-xs font-semibold">অর্ডার করুন</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+      <!-- ================= 6. FOOTER ================= -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-10 pb-12 border-b border-gray-800">
+            
+            <!-- Brand Info -->
+            <div class="space-y-3">
+                <div class="flex items-center space-x-2">
+                    <div class="w-9 h-9 bg-emerald-600 text-white rounded-lg flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-white">boipoka</span>
+                </div>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    পাঠকদের হাতে খাঁটি জ্ঞান ও সেরা মানের বই পৌঁছে দেওয়াই আমাদের লক্ষ্য।
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3">কুইক লিংকস</h4>
+                <ul class="space-y-2 text-xs">
+                    <li><a href="index.html" class="hover:text-emerald-400">হোম</a></li>
+                    <li><a href="about-book.html" class="hover:text-emerald-400">বই পরিচিতি</a></li>
+                    <li><a href="author.html" class="hover:text-emerald-400">লেখক পরিচিতি</a></li>
+                    <li><a href="contact.html" class="hover:text-emerald-400">যোগাযোগ</a></li>
+                </ul>
+            </div>
+
+            <!-- Official Contact Details -->
+            <div>
+                <h4 class="text-sm font-bold text-white uppercase tracking-wider mb-3">অফিসিয়াল যোগাযোগ</h4>
+                <ul class="space-y-2 text-xs">
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-location-dot text-emerald-500"></i>
+                        <span>Rajasthali,Rangmati,Bangladesh</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-envelope text-emerald-500"></i>
+                        <span>choitanyatanchanya@gmail.com</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <i class="fa-solid fa-phone text-emerald-500"></i>
+                        <span>01843589154</span>
+                    </li>
+                </ul>
+
+                <!-- Payment Partners Icons -->
+                <div class="mt-4 pt-4 border-t border-gray-800">
+                    <span class="text-[10px] text-gray-500 uppercase block mb-2">Accepted Payments</span>
+                    <div class="flex space-x-3 text-lg text-gray-400">
+                        <i class="fa-solid fa-wallet hover:text-pink-500" title="bKash"></i>
+                        <i class="fa-solid fa-mobile-screen hover:text-orange-500" title="Nagad"></i>
+                        <i class="fa-solid fa-credit-card hover:text-blue-500" title="Card"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="py-4 text-center text-sm text-gray-500 bg-gray-900">
+            <p>© 2026 boipoka</p>
+            <p class="text-xs text-gray-400 mt-1">
+                Design by <span class="text-emerald-600 font-bold">Choitanya Tanchangya</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Script File Link -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
