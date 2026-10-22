@@ -36,15 +36,6 @@
             transition: max-height 0.3s ease-out;
         }
     
+ 
 
-
-    /* Green Dynamic Text Animation */
-    @keyframes greenGlow {
-        0% { color: #059669; }
-        50% { color: #3d7965; }
-        100% { color: #3e899a; }
-    }
-    .animated-green-text {
-        animation: greenGlow 2.5s infinite alternate;
-    }
-
+     
